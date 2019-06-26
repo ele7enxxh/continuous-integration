@@ -88,6 +88,12 @@ setup_variables() {
                      -append "console=ttyAMA0 root=/dev/vda" )
       export CROSS_COMPILE=aarch64-linux-gnu- ;;
 
+    "i386")
+      config=defconfig
+      image_name=bzImage
+      qemu="qemu-system-i386"
+      qemu_cmdline=( -append "console=ttyS0" ) ;;
+
     "x86_64")
       case ${REPO} in
         common-*)
