@@ -92,7 +92,8 @@ setup_variables() {
       config=defconfig
       image_name=bzImage
       qemu="qemu-system-i386"
-      qemu_cmdline=( -append "console=ttyS0" ) ;;
+      qemu_cmdline=( -drive "file=images/i386/rootfs.ext4,format=raw,if=ide"
+                     -append "console=ttyS0 root=/dev/sda" ) ;;
 
     "x86_64")
       case ${REPO} in
